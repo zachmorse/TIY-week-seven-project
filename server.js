@@ -5,21 +5,41 @@ const models = require("./models");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const mustacheExpress = require("mustache-express");
-
-// MIDDLEWARE
-app.use("/", express.static("./public"));
-app.use(bodyParser.json());
-app.use(morgan("dev"));
+const session = require("express-session");
+const sessionConfig = require("./sessionConfig");
 
 // SET VIEW ENGINE
 app.engine("mustache", mustacheExpress());
 app.set("views", "./public");
 app.set("view engine", "mustache");
 
+// MIDDLEWARE
+app.use("/", express.static("./public"));
+app.use(bodyParser.json());
+app.use(morgan("dev"));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(session(sessionConfig));
+
+function checkAuth(req, res, next) {
+  if (!req.session.user) {
+    return res.redirect("/login");
+  } else {
+    next();
+  }
+}
+
 // ROUTES
 
-app.get("/", function(req, res) {
+app.get("/", checkAuth, function(req, res) {
   res.render("index");
+});
+
+app.get("/login", function(req, res) {
+  res.render("login");
+});
+
+app.get("/signup", function(req, res) {
+  res.render("signup");
 });
 
 // LISTENER
