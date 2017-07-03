@@ -39,7 +39,7 @@ app.get("/login", function(req, res) {
 });
 
 app.post("/login", function(req, res) {
-  res.render("index");
+  res.redirect("/");
 });
 
 app.get("/signup", function(req, res) {
@@ -53,6 +53,6 @@ app.get("/logout", function(req, res) {
 
 // LISTENER
 
-app.listen(8000, () => {
+app.listen(port, () => {
   console.log(`Server listening on port ${port}.`);
 });
