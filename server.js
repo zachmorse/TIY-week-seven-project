@@ -38,8 +38,17 @@ app.get("/login", function(req, res) {
   res.render("login");
 });
 
+app.post("/login", function(req, res) {
+  res.render("index");
+});
+
 app.get("/signup", function(req, res) {
   res.render("signup");
+});
+
+app.get("/logout", function(req, res) {
+  req.session.destroy();
+  res.redirect("/login");
 });
 
 // LISTENER
