@@ -8,15 +8,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      message: {
-        type: sequelize.TEXT,
+      content: {
+        type: Sequelize.TEXT,
         allowNull: false
       },
       authorid: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: "users",
+          model: "user",
           key: "id"
         }
       },

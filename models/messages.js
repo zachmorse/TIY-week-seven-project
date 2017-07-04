@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
   var messages = sequelize.define(
     "messages",
     {
-      message: {
+      content: {
         type: DataTypes.TEXT,
         allowNull: false
       }
@@ -12,10 +12,8 @@ module.exports = function(sequelize, DataTypes) {
   );
 
   messages.associate = function(models) {
-    messages.belongsTo(models.users, {
-      as: "messages",
-      foreignKey: "authorid"
-    });
+    messages.belongsTo(models.user, { as: "author", foreignKey: "authorid" });
+    messages.hasMany(models.likes, { as: "likes", foreignKey: "messageid" });
   };
   return messages;
 };
