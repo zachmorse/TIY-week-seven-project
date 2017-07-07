@@ -4,11 +4,11 @@ module.exports = function(sequelize, DataTypes) {
     "likes",
     {
       userid: {
-        type: Sequelize.INTEGER,
+        type: DataTypes.INTEGER,
         allowNull: false
       },
       messagesid: {
-        type: Sequelize.INTEGER,
+        type: DataTypes.INTEGER,
         allowNull: false
       }
     },
