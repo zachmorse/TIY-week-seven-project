@@ -9,8 +9,13 @@
 </head>
 
 <body>
-	<h1>Hello world, this is the beginnings of GABBLE</h1>
-
+	{{#userListing}}
+	<h1>Hello {{userListing.displayName}}, welcome to Gabble!</h1>
+	{{/userListing}}
+	<h1>Messages</h1>
+	{{#messages}}
+	<p>{{content}} -- {{author.displayname}}, at {{createdAt}}</p>
+	{{/messages}}
 	<a href="/logout">Log out</a>
 </body>
 

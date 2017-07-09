@@ -8,31 +8,29 @@ const mustacheExpress = require("mustache-express");
 const session = require("express-session");
 const sessionConfig = require("./sessionConfig");
 
-const router = require("./routing/routes.js");
-
+// const router = require("./routing/routes.js");
+const indexRouter = require("./routing/indexRoutes.js");
+const loginRouter = require("./routing/loginRoutes.js");
+const signupRouter = require("./routing/signupRoutes.js");
 // SET VIEW ENGINE
+
 app.engine("mustache", mustacheExpress());
-app.set("views", "./public");
+app.set("views", "./views");
 app.set("view engine", "mustache");
 
 // MIDDLEWARE
+
 app.use("/", express.static("./public"));
 app.use(bodyParser.json());
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session(sessionConfig));
 
-// function checkAuth(req, res, next) {
-//   if (!req.session.user) {
-//     return res.redirect("/login");
-//   } else {
-//     next();
-//   }
-// }
-
 // ROUTES
 
-app.use("/", router);
+app.use("/", indexRouter);
+app.use("/login", loginRouter);
+app.use("/signup", signupRouter);
 
 // LISTENER
 
