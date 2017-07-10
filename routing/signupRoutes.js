@@ -18,11 +18,18 @@ signupRouter.post("/signup", (req, res) => {
     displayname: req.body.displayname,
     password: req.body.password
   });
-  newUser.save().then(function(savedUser) {
-    console.log(savedUser);
-  });
-  res.redirect("/login");
+  newUser
+    .save()
+    .then(function(savedUser) {
+      console.log(savedUser);
+      res.redirect("/login");
+    })
+    .catch(err => {
+      res.status(500).send(err);
+    });
 });
+
+/// ----- TAKE OUT TO SYNC GITHUB
 
 // router.post("/index", (req, res) => {
 //   res.redirect("/");

@@ -8,10 +8,13 @@ const mustacheExpress = require("mustache-express");
 const session = require("express-session");
 const sessionConfig = require("./sessionConfig");
 
-// const router = require("./routing/routes.js");
 const indexRouter = require("./routing/indexRoutes.js");
 const loginRouter = require("./routing/loginRoutes.js");
 const signupRouter = require("./routing/signupRoutes.js");
+const createGabRouter = require("./routing/createGabRoutes");
+const logoutRouter = require("./routing/logoutRoutes");
+const likeRouter = require("./routing/likeRoutes");
+
 // SET VIEW ENGINE
 
 app.engine("mustache", mustacheExpress());
@@ -31,9 +34,14 @@ app.use(session(sessionConfig));
 app.use("/", indexRouter);
 app.use("/login", loginRouter);
 app.use("/signup", signupRouter);
+app.use("/gab", createGabRouter);
+app.use("/logout", logoutRouter);
+app.use("/like", likeRouter);
 
 // LISTENER
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}.`);
 });
+
+/// ----- TAKE OUT TO SYNC GITHUB
