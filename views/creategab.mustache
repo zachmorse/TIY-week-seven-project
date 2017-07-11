@@ -10,11 +10,14 @@
 
 <body>
 	<h1> CREATE A GAB </h1>
-
+	{{#userListing}}
+		<span> <a href="/">Home</a> <strong>|</strong> Logged in as {{userListing.displayName}} <strong>|</strong> <a href="/gab">Post a Gab</a> <strong>|</strong> <a href="/profile/{{userListing.userId}}">Your Profile</a> <strong>|</strong> <a href="/logout">Log out</a>  
+	{{/userListing}}	
 	<form class="creategab" action="/gab" method="post">
 		<input type="textarea" name="gab" placeholder="post your gab!">
 		<input type="submit" value="post gab">
 	</form>
+	<a href="/">Back to home page</a>
 </body>
 
 </html>

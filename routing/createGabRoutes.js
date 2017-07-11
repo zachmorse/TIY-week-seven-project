@@ -4,7 +4,7 @@ const models = require("../models/");
 const shared = require("../shared/functions.js");
 
 createGabRouter.get("/", shared.checkAuth, (req, res) => {
-  res.render("creategab");
+  res.render("creategab", { userListing: req.session.user });
 });
 
 createGabRouter.post("/", shared.checkAuth, (req, res) => {

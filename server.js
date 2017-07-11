@@ -17,7 +17,7 @@ const createGabRouter = require("./routing/createGabRoutes");
 const logoutRouter = require("./routing/logoutRoutes");
 const likeRouter = require("./routing/likeRoutes");
 const profileRouter = require("./routing/ProfileRoutes");
-
+const likedByRouter = require("./routing/likedByRoutes");
 // SET VIEW ENGINE
 
 app.engine("mustache", mustacheExpress());
@@ -41,6 +41,7 @@ app.use("/gab", createGabRouter);
 app.use("/logout", logoutRouter);
 app.use("/like", likeRouter);
 app.use("/profile", profileRouter);
+app.use("/likedby", likedByRouter);
 
 // LISTENER
 
