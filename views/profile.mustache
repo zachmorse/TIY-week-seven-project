@@ -10,14 +10,14 @@
 
 <body>
 	{{#userListing}}
-		<h1>Welcome to Gabble!</h1>
-		<span> <a href="/">Home</a> <strong>|</strong> Logged in as {{userListing.displayName}} <strong>|</strong> <a href="/gab">Post a Gab</a> <strong>|</strong> <a href="/profile/{{userListing.userId}}">Your Profile</a> <strong>|</strong> <a href="/logout">Log out</a>  
+	<h1>Welcome to Gabble!</h1>
+	<span> <a href="/">Home</a> <strong>|</strong> Logged in as {{userListing.displayName}} <strong>|</strong> <a href="/gab">Post a Gab</a> <strong>|</strong> <a href="/profile/{{userListing.userId}}">Your Profile</a> <strong>|</strong> <a href="/logout">Log out</a>  
 	{{/userListing}}	
-	<h1>Get your gabs:</h1>
+	<h1>Your posts:</h1>
 	<div class="GabContainer">
 		{{#messages}}
 		<p><strong>{{content}}</strong></p> 
-		<p>{{author.displayname}}, at {{createdAt}}</p>
+		<p>{{createdAt}}</p>
 		<a href="/like/{{id}}">like</a>
 		<p>{{likes.length}} likes</p>
 		{{/messages}}	

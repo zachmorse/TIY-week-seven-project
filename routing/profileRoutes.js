@@ -1,22 +1,22 @@
 const express = require("express");
-const indexRouter = express.Router();
+const profileRouter = express.Router();
 const models = require("../models/");
 const shared = require("../shared/functions.js");
 
-// ------
-
-indexRouter.get("/", shared.checkAuth, (req, res) => {
+profileRouter.get("/:id", shared.checkAuth, (req, res) => {
   models.messages
     .findAll({
       order: [["createdAt", "DESC"]],
+      where: {
+        authorid: req.params.id
+      },
       include: [
         { model: models.user, as: "author" },
         { model: models.likes, as: "likes" }
       ]
     })
     .then(retrievedMessages => {
-      console.log(req.session.user);
-      res.render("index", {
+      res.render("profile", {
         userListing: req.session.user,
         messages: retrievedMessages
       });
@@ -26,6 +26,4 @@ indexRouter.get("/", shared.checkAuth, (req, res) => {
     });
 });
 
-/// ----- TAKE OUT TO SYNC GITHUB
-
-module.exports = indexRouter;
+module.exports = profileRouter;

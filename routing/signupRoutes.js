@@ -4,7 +4,11 @@ const models = require("../models/");
 
 ///------------------------
 
-signupRouter.post("/signup", (req, res) => {
+signupRouter.get("/", (req, res) => {
+  res.render("signup");
+});
+
+signupRouter.post("/", (req, res) => {
   if (
     !req.body ||
     !req.body.username ||
@@ -30,9 +34,5 @@ signupRouter.post("/signup", (req, res) => {
 });
 
 /// ----- TAKE OUT TO SYNC GITHUB
-
-// router.post("/index", (req, res) => {
-//   res.redirect("/");
-// });
 
 module.exports = signupRouter;

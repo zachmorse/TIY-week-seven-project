@@ -16,8 +16,11 @@ module.exports = function(sequelize, DataTypes) {
   );
 
   likes.associate = function(models) {
-    likes.belongsTo(models.user, { as: "author", foreignKey: "authorid" });
-    likes.belongsTo(models.messages, { as: "likes", foreignKey: "authorid" });
+    likes.belongsTo(models.user, { as: "author", foreignKey: "userid" });
+    likes.belongsTo(models.messages, {
+      as: "message",
+      foreignKey: "messagesid"
+    });
   };
   return likes;
 };

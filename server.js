@@ -8,12 +8,15 @@ const mustacheExpress = require("mustache-express");
 const session = require("express-session");
 const sessionConfig = require("./sessionConfig");
 
+// ROUTE REQUIREMENTS
+
 const indexRouter = require("./routing/indexRoutes.js");
 const loginRouter = require("./routing/loginRoutes.js");
 const signupRouter = require("./routing/signupRoutes.js");
 const createGabRouter = require("./routing/createGabRoutes");
 const logoutRouter = require("./routing/logoutRoutes");
 const likeRouter = require("./routing/likeRoutes");
+const profileRouter = require("./routing/ProfileRoutes");
 
 // SET VIEW ENGINE
 
@@ -37,6 +40,7 @@ app.use("/signup", signupRouter);
 app.use("/gab", createGabRouter);
 app.use("/logout", logoutRouter);
 app.use("/like", likeRouter);
+app.use("/profile", profileRouter);
 
 // LISTENER
 
