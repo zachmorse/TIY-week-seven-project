@@ -5,19 +5,23 @@
 	<title>Gabble | Sign Up</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<link href="/style.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 </head>
 
 <body>
-	<h1>Sign Up</h1>
-	<form action="/signup" method="post">
-		<input type="text" name="username" placeholder="User Name">
-		<br>
-		<input type="password" name="password" placeholder="password">
-		<br>
-		<input type="text" name="displayname" placeholder="display name">
+	<h1 class="headline">Gabble Sign Up</h1>
+	<form action="/signup" method="post" class="signupForm">
+		<p class="formText">User name:<p>
+		<input type="text" name="username" class="signupField">
+		<p class="formText">Password:<p>
+		<input type="password" name="password" class="signupField">
+		<p class="formText">Display Name:<p>
+		<input type="text" name="displayname" class="signupField">
+		<p class="formText">press enter to submit:</p>
 		<input type="submit">
 	</form>	
+	<a href="/login">Back to login page</a>
 </body>
 
 </html>

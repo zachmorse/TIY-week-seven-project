@@ -33,6 +33,4 @@ loginRoutes.post("/", (req, res) => {
     });
 });
 
-/// ----- TAKE OUT TO SYNC GITHUB
-
 module.exports = loginRoutes;

@@ -1,0 +1,84 @@
+body {
+  background-color: black;
+  color: #00ab00;
+  font-family: 'Inconsolata', monospace;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: #c0b900;
+}
+
+a:hover {
+  color: #ff625d;
+}
+
+.headline {
+  font-size: 5rem;
+  margin: 1rem 0rem 0rem 0rem;
+}
+
+.gabContainer {
+  height: 67vh;
+  margin: 0rem 18rem;
+  overflow: scroll;
+  border-top: 2px solid #347dcb;
+}
+
+.messagebox {
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+}
+
+.messageContent {
+  font-style: italic;
+}
+
+.postAuthor {
+  font-size: 0.9rem;
+  color: #347dcb;
+}
+
+.gabInput {
+  height: 8vh;
+  width: 17vw;
+  font-family: 'Inconsolata', monospace;
+  text-align: center;
+  color: #347dcb;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #00ab00;
+  margin: 0rem 0rem 1rem 0rem;
+  font-size: 1rem;
+}
+
+.postGab {
+  background-color: transparent;
+  color: #347dcb;
+  border: none;
+  margin: 0rem 0rem 1rem 0rem;
+  font-size: 1rem;
+}
+
+.signupForm {
+  margin-bottom: 1rem;
+}
+
+.signupField {
+  font-family: 'Inconsolata', monospace;
+  text-align: center;
+  color: #347dcb;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #c0b900;
+  font-size: 1rem;
+}
+
+.formText {
+  color: #347dcb;
+}

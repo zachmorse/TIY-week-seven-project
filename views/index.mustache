@@ -5,21 +5,25 @@
 	<title>Gabble | Home</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<link href="/style.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 </head>
 
 <body>
 	{{#userListing}}
-	<h1>Welcome to Gabble!</h1>
-	<span> <a href="/">Home</a> <strong>|</strong> Logged in as {{userListing.displayName}} <strong>|</strong> <a href="/gab">Post a Gab</a> <strong>|</strong> <a href="/profile/{{userListing.userId}}">Your Profile</a> <strong>|</strong> <a href="/logout">Log out</a>  
+	<h1 class="headline">Welcome to Gabble</h1>
+	<p> Logged in as: {{userListing.displayName}} </p>
+	<span> <a href="/">Home</a> <strong>|</strong> <a href="/gab">Post a Gab</a> <strong>|</strong> <a href="/profile/{{userListing.userId}}">Your Profile</a> <strong>|</strong> <a href="/logout">Log out</a>  
 	{{/userListing}}	
-	<h1>Get your gabs:</h1>
-	<div class="GabContainer">
+	<h2>messageboard:</h2>
+	<div class="gabContainer">
 		{{#messages}}
-		<p><strong>{{content}}</strong></p> 
-		<p>{{author.displayname}}, at {{createdAt}}</p>
-		<span><a href="/likedby/{{id}}">{{likes.length}} likes so far</a> | <a href="/like/{{id}}">like this post</a></span>
-	{{/messages}}
+		<div class="messagebox">
+			<h3 class="messageContent"><strong>"{{content}}"</strong></h3> 
+			<p class="postAuthor">{{author.displayname}}, at {{createdAt}}</p>
+			<span><a href="/likedby/{{id}}">{{likes.length}} likes so far</a> | <a href="/like/{{id}}">like this post</a></span>
+		</div>
+		{{/messages}}
 	</div>
 </body>
 

@@ -5,21 +5,22 @@
 	<title>Gabble | Your Profile</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<link href="/style.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 </head>
 
 <body>
 	{{#userListing}}
-	<h1>Welcome to Gabble!</h1>
-	<span> <a href="/">Home</a> <strong>|</strong> Logged in as {{userListing.displayName}} <strong>|</strong> <a href="/gab">Post a Gab</a> <strong>|</strong> <a href="/profile/{{userListing.userId}}">Your Profile</a> <strong>|</strong> <a href="/logout">Log out</a>  
+	<h1 class="headline">Your Gabble Profile</h1>
+	<p>Logged in as: {{userListing.displayName}}</p>
+	<span> <a href="/">Home</a> <strong>|</strong> <a href="/gab">Post a Gab</a> <strong>|</strong> <a href="/profile/{{userListing.userId}}">Your Profile</a> <strong>|</strong> <a href="/logout">Log out</a>  
 	{{/userListing}}	
-	<h1>Your posts:</h1>
-	<div class="GabContainer">
+	<h2>Your posts:</h2>
+	<div class="gabContainer">
 		{{#messages}}
-		<p><strong>{{content}}</strong></p> 
-		<p>{{createdAt}}</p>
+		<h3 class="messageContent"<strong>"{{content}}"</strong></h3> 
+		<p class="postAuthor">{{createdAt}}</p>
 		<p><span>{{likes.length}} likes</span> | <a href="/delete/{{id}}">Delete</a></p>
-		
 		{{/messages}}	
 	</div>
 </body>

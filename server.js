@@ -19,6 +19,7 @@ const likeRouter = require("./routing/likeRoutes");
 const profileRouter = require("./routing/ProfileRoutes");
 const likedByRouter = require("./routing/likedByRoutes");
 const deleteRouter = require("./routing/deleteRoutes");
+
 // SET VIEW ENGINE
 
 app.engine("mustache", mustacheExpress());
@@ -50,5 +51,3 @@ app.use("/delete", deleteRouter);
 app.listen(port, () => {
   console.log(`Server listening on port ${port}.`);
 });
-
-/// ----- TAKE OUT TO SYNC GITHUB

@@ -26,5 +26,3 @@ createGabRouter.post("/", shared.checkAuth, (req, res) => {
 });
 
 module.exports = createGabRouter;
-
-/// ----- TAKE OUT TO SYNC GITHUB

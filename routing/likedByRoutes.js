@@ -29,28 +29,4 @@ likedByRoutes.get("/:id", shared.checkAuth, (req, res) => {
     });
 });
 
-//   models.likes
-//     .findOne({
-//       where: { messagesid: req.params.id },
-//       include: [
-//         { model: models.user, as: "author" },
-//         {
-//           model: models.likes,
-//           as: "likes",
-//           include: [{ model: models.user, as: "user" }]
-//         }
-//       ]
-//     })
-//     .then(retrievedLikes => {
-//       res
-//         .render("likes", {
-//           userListing: req.session.user,
-//           likes: retrievedLikes
-//         })
-//         .catch(err => {
-//           res.status(500).send(err);
-//         });
-//     });
-// });
-
 module.exports = likedByRoutes;

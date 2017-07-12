@@ -2,8 +2,6 @@ const express = require("express");
 const signupRouter = express.Router();
 const models = require("../models/");
 
-///------------------------
-
 signupRouter.get("/", (req, res) => {
   res.render("signup");
 });
@@ -32,7 +30,5 @@ signupRouter.post("/", (req, res) => {
       res.status(500).send(err);
     });
 });
-
-/// ----- TAKE OUT TO SYNC GITHUB
 
 module.exports = signupRouter;

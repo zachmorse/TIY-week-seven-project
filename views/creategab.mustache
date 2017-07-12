@@ -5,21 +5,23 @@
 	<title>Gabble | Post a Gab</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--<link href="css/style.css" rel="stylesheet">-->
+	<link href="/style.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
 </head>
 
 <body>
-	<h1> CREATE A GAB </h1>
-	{{#userListing}}
-		<span> <a href="/">Home</a> <strong>|</strong> Logged in as {{userListing.displayName}} <strong>|</strong> <a href="/gab">Post a Gab</a> <strong>|</strong> <a href="/profile/{{userListing.userId}}">Your Profile</a> <strong>|</strong> <a href="/logout">Log out</a>  
+	{{#userListing}}	
+	<h1 class="headline"> CREATE A GAB </h1>
+	<p> Logged in as: {{userListing.displayName}} </p>
+		<span> <a href="/">Home</a> <strong>|</strong> <a href="/gab">Post a Gab</a> <strong>|</strong> <a href="/profile/{{userListing.userId}}">Your Profile</a> <strong>|</strong> <a href="/logout">Log out</a>  
 	{{/userListing}}	
+	<h2>new message:</h2>
 	<form class="creategab" action="/gab" method="post">
-		<input type="textarea" name="gab" placeholder="post your gab!">
-		<input type="submit" value="post gab">
+		<input type="textarea" name="gab" class="gabInput" placeholder="post your gab!"><br>
+		<input type="submit" class="postGab" value="post it">
 	</form>
-	<a href="/">Back to home page</a>
 </body>
 
 </html>
 
-<!--/// ----- TAKE OUT TO SYNC GITHUB-->
