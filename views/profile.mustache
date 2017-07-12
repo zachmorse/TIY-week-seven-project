@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title></title>
+	<title>Gabble | Your Profile</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,8 +18,8 @@
 		{{#messages}}
 		<p><strong>{{content}}</strong></p> 
 		<p>{{createdAt}}</p>
-		<a href="/like/{{id}}">like</a>
-		<p>{{likes.length}} likes</p>
+		<p><span>{{likes.length}} likes</span> | <a href="/delete/{{id}}">Delete</a></p>
+		
 		{{/messages}}	
 	</div>
 </body>

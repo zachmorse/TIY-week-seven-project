@@ -18,6 +18,7 @@ const logoutRouter = require("./routing/logoutRoutes");
 const likeRouter = require("./routing/likeRoutes");
 const profileRouter = require("./routing/ProfileRoutes");
 const likedByRouter = require("./routing/likedByRoutes");
+const deleteRouter = require("./routing/deleteRoutes");
 // SET VIEW ENGINE
 
 app.engine("mustache", mustacheExpress());
@@ -42,6 +43,7 @@ app.use("/logout", logoutRouter);
 app.use("/like", likeRouter);
 app.use("/profile", profileRouter);
 app.use("/likedby", likedByRouter);
+app.use("/delete", deleteRouter);
 
 // LISTENER
 

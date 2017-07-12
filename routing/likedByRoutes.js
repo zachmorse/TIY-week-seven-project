@@ -5,7 +5,7 @@ const shared = require("../shared/functions.js");
 
 likedByRoutes.get("/:id", shared.checkAuth, (req, res) => {
   models.messages
-    .findAll({
+    .findOne({
       where: { id: req.params.id },
       include: [
         { model: models.user, as: "author" },
@@ -22,6 +22,7 @@ likedByRoutes.get("/:id", shared.checkAuth, (req, res) => {
           userListing: req.session.user,
           likes: retrievedLikes
         })
+        // res.send(retrievedLikes)
         .catch(err => {
           res.status(500).send(err);
         });
@@ -29,11 +30,15 @@ likedByRoutes.get("/:id", shared.checkAuth, (req, res) => {
 });
 
 //   models.likes
-//     .findAll({
+//     .findOne({
 //       where: { messagesid: req.params.id },
 //       include: [
-//         { model: models.user, as: "author" }
-//         // { model: models.messages, as: "messages" }
+//         { model: models.user, as: "author" },
+//         {
+//           model: models.likes,
+//           as: "likes",
+//           include: [{ model: models.user, as: "user" }]
+//         }
 //       ]
 //     })
 //     .then(retrievedLikes => {

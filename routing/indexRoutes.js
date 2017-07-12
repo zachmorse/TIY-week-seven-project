@@ -15,7 +15,6 @@ indexRouter.get("/", shared.checkAuth, (req, res) => {
       ]
     })
     .then(retrievedMessages => {
-      console.log(req.session.user);
       res.render("index", {
         userListing: req.session.user,
         messages: retrievedMessages
