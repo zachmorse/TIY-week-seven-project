@@ -15,11 +15,17 @@
 	<p>Logged in as: {{userListing.displayName}}</p>
 	<span> <a href="/">Home</a> <strong>|</strong> <a href="/gab">Post a Gab</a> <strong>|</strong> <a href="/profile/{{userListing.userId}}">Your Profile</a> <strong>|</strong> <a href="/logout">Log out</a>  
 	{{/userListing}}	
-	{{#likes}}
-	<p>{{content}}<p>
+
+	{{#like}}
+	<p>"{{content}}"<p>
 	<p>Liked by:</p>
-	<p>{{author.username}}</p>
-	{{/likes}}
+	{{/like}}
+
+	{{#like.likes}}
+		{{#authorId}}
+			<p class="nameOfLikers">{{displayname}}</p>
+		{{/authorId}}
+	{{/like.likes}}
 </body>
 
 </html>

@@ -12,20 +12,18 @@ likedByRoutes.get("/:id", shared.checkAuth, (req, res) => {
         {
           model: models.likes,
           as: "likes",
-          include: [{ model: models.user, as: "author" }]
+          include: [{ model: models.user, as: "authorId" }]
         }
       ]
     })
     .then(retrievedLikes => {
-      res
-        .render("likes", {
-          userListing: req.session.user,
-          likes: retrievedLikes
-        })
-        // res.send(retrievedLikes)
-        .catch(err => {
-          res.status(500).send(err);
-        });
+      res.render("likes", {
+        userListing: req.session.user,
+        like: retrievedLikes
+      });
+    })
+    .catch(err => {
+      res.status(500).send(err);
     });
 });
 
