@@ -1,7 +1,7 @@
 body {
   background-color: black;
   color: #00ab00;
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -25,7 +25,7 @@ a:hover {
 .gabContainer {
   height: 67vh;
   margin: 0rem 18rem;
-  overflow: scroll;
+  /* overflow: scroll; */
   border-top: 2px solid #347dcb;
 }
 
@@ -47,7 +47,7 @@ a:hover {
 .gabInput {
   height: 8vh;
   width: 17vw;
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
   text-align: center;
   color: #347dcb;
   background-color: transparent;
@@ -70,7 +70,7 @@ a:hover {
 }
 
 .signupField {
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
   text-align: center;
   color: #347dcb;
   background-color: transparent;

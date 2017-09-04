@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Gabble | Home</title>
+	<title>Message Terminal | Home</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="/style.css" rel="stylesheet">
@@ -10,18 +10,20 @@
 </head>
 
 <body>
-	{{#userListing}}
-	<h1 class="headline">Welcome to Gabble</h1>
-	<p> Logged in as: {{userListing.displayName}} </p>
-	<span> <a href="/">Home</a> <strong>|</strong> <a href="/gab">Post a Gab</a> <strong>|</strong> <a href="/profile/{{userListing.userId}}">Your Profile</a> <strong>|</strong> <a href="/logout">Log out</a>  
-	{{/userListing}}	
+	<div class="headlineContainer">
+		{{#userListing}}
+		<h1 class="headline">Message Terminal</h1>
+		<p> Logged in as: {{userListing.displayName}} </p>
+		<span> <a href="/">Home</a> <strong>|</strong> <a href="/gab">Post Message</a> <strong>|</strong> <a href="/profile/{{userListing.userId}}">Your Messages</a> <strong>|</strong> <a href="/logout">Log out</a>  
+		{{/userListing}}	
 	<h2>messageboard:</h2>
+	</div>
 	<div class="gabContainer">
 		{{#messages}}
 		<div class="messagebox">
 			<h3 class="messageContent"><strong>"{{content}}"</strong></h3> 
 			<p class="postAuthor">{{author.displayname}}, at {{createdAt}}</p>
-			<span><a href="/likedby/{{id}}">{{likes.length}} likes so far</a> | <a href="/like/{{id}}">like this post</a></span>
+			<span><a href="/likedby/{{id}}">{{likes.length}} likes so far</a> | <a href="/like/{{id}}">like this message</a></span>
 		</div>
 		{{/messages}}
 	</div>
