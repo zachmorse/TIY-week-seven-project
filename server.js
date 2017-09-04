@@ -16,7 +16,7 @@ const signupRouter = require("./routing/signupRoutes.js");
 const createGabRouter = require("./routing/createGabRoutes");
 const logoutRouter = require("./routing/logoutRoutes");
 const likeRouter = require("./routing/likeRoutes");
-const profileRouter = require("./routing/ProfileRoutes");
+const profileRouter = require("./routing/profileRoutes");
 const likedByRouter = require("./routing/likedByRoutes");
 const deleteRouter = require("./routing/deleteRoutes");
 
